@@ -78,6 +78,9 @@ class Media
     #[ORM\ManyToMany(targetEntity: Language::class, inversedBy: 'mediaList')]
     private Collection $mediaLanguage;
 
+    #[ORM\Column]
+    private ?int $popularity = null;
+
     public function __construct()
     {
         $this->commentList = new ArrayCollection();
@@ -325,6 +328,18 @@ class Media
     public function removeMediaLanguage(Language $mediaLanguage): static
     {
         $this->mediaLanguage->removeElement($mediaLanguage);
+
+        return $this;
+    }
+
+    public function getPopularity(): ?int
+    {
+        return $this->popularity;
+    }
+
+    public function setPopularity(int $popularity): static
+    {
+        $this->popularity = $popularity;
 
         return $this;
     }

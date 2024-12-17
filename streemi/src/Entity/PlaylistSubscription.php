@@ -13,13 +13,13 @@ class PlaylistSubscription
     private ?int $id = null;
 
     #[ORM\Column]
-    private ?\DateTimeImmutable $subscribedAt = null; // Corriger l'orthographe
+    private ?\DateTimeImmutable $subscribedAt = null;
 
-    #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'userPlaylist')] // Corriger la propriété inversedBy
-    private ?User $user = null; // Renommer userId en user
+    #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'userPlaylist')]
+    private ?User $user = null;
 
-    #[ORM\ManyToOne(targetEntity: Playlist::class, inversedBy: 'playlistSubscriptions')] // Corriger la propriété inversedBy
-    private ?Playlist $playlist = null; // Renommer playlistId en playlist
+    #[ORM\ManyToOne(targetEntity: Playlist::class, inversedBy: 'playlistSubscriptions')]
+    private ?Playlist $playlist = null; 
 
     public function getId(): ?int
     {

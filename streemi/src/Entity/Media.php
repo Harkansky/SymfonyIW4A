@@ -67,9 +67,9 @@ class Media
     private Collection $watchHistories;
 
     /**
-     * @var Collection<int, Categorie>
+     * @var Collection<int, Category>
      */
-    #[ORM\ManyToMany(targetEntity: Categorie::class, inversedBy: 'mediaList')]
+    #[ORM\ManyToMany(targetEntity: Category::class, inversedBy: 'mediaList')]
     private Collection $categorieMedia;
 
     /**
@@ -285,14 +285,14 @@ class Media
     }
 
     /**
-     * @return Collection<int, Categorie>
+     * @return Collection<int, Category>
      */
     public function getCategorieMedia(): Collection
     {
         return $this->categorieMedia;
     }
 
-    public function addCategorieMedium(Categorie $categorieMedium): static
+    public function addCategorieMedium(Category $categorieMedium): static
     {
         if (!$this->categorieMedia->contains($categorieMedium)) {
             $this->categorieMedia->add($categorieMedium);
@@ -301,7 +301,7 @@ class Media
         return $this;
     }
 
-    public function removeCategorieMedium(Categorie $categorieMedium): static
+    public function removeCategorieMedium(Category $categorieMedium): static
     {
         $this->categorieMedia->removeElement($categorieMedium);
 

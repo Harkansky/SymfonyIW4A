@@ -16,7 +16,6 @@
 
     <body class="font-montserrat text-sm bg-white">
     <div class="flex min-h-screen">
-        {% include 'comp/left-menu.html.twig' %}
         <main class="flex-1">
             <header class=" font-bold text-lg flex items-center md:hidden">
                     <span class="mr-6">
@@ -64,7 +63,7 @@
                                 </div>
 
                                 <div class="flex items-center justify-center mt-16">
-                                    <a class="text-red-600 cursor-pointer transition hover:text-red-700 hover:scale-105" href="{{ path('page_login') }}">
+                                    <a class="text-red-600 cursor-pointer transition hover:text-red-700 hover:scale-105" href="{{ path('app_login') }}">
                                         Vous vous souvenez de votre mot de passe ? Connectez-vous
                                     </a>
                                 </div>

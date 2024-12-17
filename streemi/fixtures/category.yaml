@@ -1,19 +1,19 @@
 App\Entity\Category:
   category_fantasy:
-    nom: 'fantasy'
+    name: 'fantasy'
     label: 'Fantasy'
   category_action:
-    nom: 'action'
+    name: 'action'
     label: 'Action'
   category_aventure:
-    nom: 'aventure'
+    name: 'aventure'
     label: 'Aventure'
   category_romance:
-    nom: 'romance'
+    name: 'romance'
     label: 'Romance'
   category_comedie:
-    nom: 'comedie'
+    name: 'comedie'
     label: 'Comedie'
   category_sf:
-    nom: 'science-fiction'
+    name: 'science-fiction'
     label: 'Science-Fiction'

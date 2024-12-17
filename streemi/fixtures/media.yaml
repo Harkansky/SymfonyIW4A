@@ -1,10 +1,12 @@
 App\Entity\Media:
   media (template):
+    mediaType: 'Test'
     title: 'Media <current()>'
     shortDescription: 'short description'
     longDescription: '<realText()>'
     releaseDate: '<datetime()>'
     coverImage: 'https://picsum.photos/400/550?random=<numberBetween(1, 100)>'
+    popularity: '28'
 
 App\Entity\Movie:
   media_movie_{1..50} (extends media):
@@ -17,26 +19,26 @@ App\Entity\Serie:
 
 App\Entity\Season:
   season_1_{@media_serie*}:
-    number: '<numberBetween(1, 10)>'
-    serie: '<current()>'
+    seasonNumber: '<numberBetween(1, 10)>'
+    serieId: '<current()>'
   season_2_{@media_serie*}:
-    number: '<numberBetween(1, 10)>'
-    serie: '<current()>'
+    seasonNumber: '<numberBetween(1, 10)>'
+    serieId: '<current()>'
   season_3_{@media_serie*}:
-    number: '<numberBetween(1, 10)>'
-    serie: '<current()>'
+    seasonNumber: '<numberBetween(1, 10)>'
+    serieId: '<current()>'
 
 App\Entity\Episode:
   episode_{1..500}:
     title: '<sentence()>'
-    duration: '<numberBetween(45, 90)>'
-    releasedAt: "<dateTimeBetween('-1 week', '+1 week')>"
-    season: '@season_*'
+    duration: "<dateTimeBetween('-1 week', '+1 week')>"
+    releaseDate: "<dateTimeBetween('-1 week', '+1 week')>"
+    seasonId: '@season_*'
 
 
 App\Entity\WatchHistory:
     watch_history_{1..500}:
-      lastWatchedAt: "<dateTimeBetween('-1 week', '+1 week')>"
+      lastWatched: "<dateTimeBetween('-1 week', '+1 week')>"
       numberOfViews: '<numberBetween(1, 100)>'
-      watcher: '@user_*'
-      media: '@media_*'
+      userId: '@user_*'
+      mediaId: '@media_*'

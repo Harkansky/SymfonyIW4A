@@ -1,22 +1,22 @@
 App\Entity\Language:
   jp:
-    nom: 'Japonais'
+    name: 'Japonais'
     code: 'JP'
   fr:
-    nom: 'Français'
+    name: 'Français'
     code: 'FR'
   en:
-    nom: 'Anglais'
+    name: 'Anglais'
     code: 'EN'
   es:
-    nom: 'Espagnol'
+    name: 'Espagnol'
     code: 'ES'
   ru:
-    nom: 'Russe'
+    name: 'Russe'
     code: 'RU'
   it:
-    nom: 'Italien'
+    name: 'Italien'
     code: 'IT'
   de:
-    nom: 'Allemand'
+    name: 'Allemand'
     code: 'DE'
